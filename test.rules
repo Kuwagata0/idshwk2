@@ -1,2 +1,2 @@
-alert tcp any any -> any 3399 (msg:"LOGIN"; pcre:"/(login)|(Initial)$/i"; flowbits:set,logged_in; flowbits:noalert; sid:1000000; rev:1;)
+alert tcp any any -> any 3399 (msg:"LOGIN"; pcre:"/(login)|(Initial)$/i"; flowbits:set,logged_in; flowbits:noalert; sid:1000002; rev:1;)
 alert tcp any any -> any 3399 (msg:"bot founded"; pcre:"/((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})(\.((2(5[0-5]|[0-4]\d))|[0-1]?\d{1,2})){3}(\:(6[0-4]\d{3}|65[0-4]\d{2}|655[0-2]\d|6553[0-5])|[0-5]?\d{0,4})/G"; flowbits:isset,logged_in; sid:1000001; rev:1; )
